@@ -1,78 +1,132 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лабораторная работа № 4 Использование ООП с базой данных SQLite</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: #35424a;
-            color: #ffffff;
-            padding: 20px 0;
-            text-align: center;
-        }
-        h1 {
-            margin: 0;
-        }
-        nav {
-            margin: 20px 0;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: #35424a;
-            font-weight: bold;
-        }
-        nav ul li a:hover {
-            color: #e8491d;
-        }
-        .content {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background: #35424a;
-            color: #ffffff;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Лабораторная работа №4 — ООП и SQLite</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #eef2f3, #ffffff);
+      color: #333;
+    }
+
+    header {
+      background-color: #3eb489;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .nav-section {
+      background: white;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .nav-section h2 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 0;
+      list-style: none;
+      margin: 0;
+    }
+
+    .nav-links li a {
+      display: block;
+      background-color: #f9f9f9;
+      padding: 14px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      color: #2c3e50;
+      transition: all 0.2s ease-in-out;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .nav-links li a:hover {
+      background-color: #e74c3c;
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .back-link a {
+      font-weight: 600;
+      color: #2c3e50;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .back-link a:hover {
+      color: #e74c3c;
+    }
+
+    footer {
+      background-color: #3eb489;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>ТУТ ПРО НОВОСТИ</h1>
-    </header>
-    <div class="content">
-        <nav>
-            <ul>
-                <li><a href="news1/news.php">НОВОСТИ</a></li>
-                <li><a href="news1/diagrama.php">ДИАГРАММА</a></li>
-            </ul>
-        </nav>
-        <h2><a href="index.php">Назад в главное меню</a></h2>
+  <header>
+    <h1>Лабораторная работа №4 — Использование ООП с базой данных SQLite</h1>
+  </header>
+
+  <div class="content">
+    <section class="nav-section">
+      <h2>Навигация по проекту</h2>
+      <ul class="nav-links">
+        <li><a href="news1/news.php">Новости</a></li>
+        <li><a href="news1/diagrama.php">Диаграмма</a></li>
+      </ul>
+    </section>
+
+    <div class="back-link">
+      <a href="index.php">← Назад в главное меню</a>
     </div>
-    <footer>
-        <p>&copy; 2025 Лабораторная работа № 4</p>
-    </footer>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Лабораторная работа №4</p>
+  </footer>
 </body>
 </html>
