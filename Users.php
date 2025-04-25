@@ -23,12 +23,12 @@ use MyProject\Classes\SuperUser;
 
 $user1 = new User("Саша", "Sasha", "password1");
 $user2 = new User("Александр", "Aleksander", "password2");
-$user3 = new User("KUKI", "KUKI", "password3");
+$user3 = new User("sad1400", "sad1400", "password3");
 $user1->showInfo();
 $user2->showInfo();
 $user3->showInfo();
 
-$user4 = new SuperUser ("Саня", "Sany", "superpass", "admin");
+$user4 = new SuperUser ("Саня", "Sanya", "superpass", "admin");
 $user4->showInfo();
 print_r($user4->getInfo());
 
