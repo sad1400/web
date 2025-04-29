@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лабораторная работа № 4 Использование ООП с базой данных SQLite</title>
+    <title>Лабораторная работа № 1 Классы и интерфейсы</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -60,19 +60,19 @@
 </head>
 <body>
     <header>
-        <h1>ТУТ ПРО НОВОСТИ</h1>
+        <h1>Классы и интерфейсы</h1>
     </header>
     <div class="content">
         <nav>
             <ul>
-                <li><a href="news1/news.php">НОВОСТИ</a></li>
-                <li><a href="news1/diagrama.php">ДИАГРАММА</a></li>
+                <li><a href="users.php">ПОЛЬЗОВАТЕЛИ</a></li>
+                <li><a href="diagrama_users.php">ДИАГРАММА</a></li>
             </ul>
         </nav>
         <h2><a href="index.php">Назад в главное меню</a></h2>
     </div>
     <footer>
-        <p>&copy; 2025 Лабораторная работа № 4</p>
+        <p>&copy; 2025 Лабораторная работа № 1</p>
     </footer>
 </body>
 </html>

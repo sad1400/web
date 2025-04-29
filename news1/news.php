@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="utf-8">
 </head>
 <body>
+    <p><a href="http://f1107164.xsph.ru/lab4.php">Назад</a></p>
     <h1>Последние новости</h1>
     <?php if ($errMsg != ""): ?>
         <div style="color: red;"><?php echo $errMsg; ?></div>

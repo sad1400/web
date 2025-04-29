@@ -1,40 +1,40 @@
 <?php
 // Интерфейс итератора
-interface Iterator {
+interface MyIterator {
     public function hasNext(): bool;
-    public function next(): string;
+    public function next(): ?string;
 }
 
 // Конкретный итератор
-class ConcreteIterator implements Iterator {
-    private $items = [];
-    private $position = 0;
+class ConcreteIterator implements MyIterator {
+    private array $items = [];
+    private int $position = 0;
 
     public function __construct(array $items) {
         $this->items = $items;
     }
 
     public function hasNext(): bool {
-        return isset($this->items[$this->position]);
+        return $this->position < count($this->items);
     }
 
-    public function next(): string {
+    public function next(): ?string {
         if ($this->hasNext()) {
             return $this->items[$this->position++];
         }
-        return null; // Если элементов больше нет, возвращаем null
+        return null;
     }
 }
 
 // Коллекция
 class Collection {
-    private $items = [];
+    private array $items = [];
 
     public function addItem(string $item): void {
         $this->items[] = $item;
     }
 
-    public function getIterator(): Iterator {
+    public function getIterator(): MyIterator {
         return new ConcreteIterator($this->items);
     }
 }
@@ -47,6 +47,6 @@ $collection->addItem("Элемент 3");
 
 $iterator = $collection->getIterator();
 while ($iterator->hasNext()) {
-    echo $iterator->next() . "\n"; // Элемент 1, Элемент 2, Элемент 3
+    echo $iterator->next() . "\n";
 }
 ?>

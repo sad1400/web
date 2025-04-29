@@ -1,16 +1,18 @@
-<?php
+<?php 
 require_once 'INewsDB.class.php';
 
-class NewsDB implements INewsDB {
+class NewsDB implements INewsDB, IteratorAggregate {
     const DB_NAME = 'news.db';
     private $_db;
+
+    // Массив для хранения категорий
+    private $items = [];
 
     public function __construct() {
         $dbExists = file_exists(self::DB_NAME);
         $this->_db = new SQLite3(self::DB_NAME);
 
         if (!$dbExists) {
-          
             $this->_db->exec("CREATE TABLE msgs(
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 title TEXT,
@@ -19,18 +21,21 @@ class NewsDB implements INewsDB {
                 source TEXT,
                 datetime INTEGER
             )");
-           
+
             $this->_db->exec("CREATE TABLE category(
                 id INTEGER,
                 name TEXT
             )");
-         
+
             $this->_db->exec("INSERT INTO category(id, name)
                 SELECT 1 as id, 'Политика' as name
                 UNION SELECT 2 as id, 'Культура' as name
                 UNION SELECT 3 as id, 'Спорт' as name
             ");
         }
+
+        // Заполняем массив категорий при создании объекта
+        $this->getCategories();
     }
 
     public function __destruct() {
@@ -39,12 +44,10 @@ class NewsDB implements INewsDB {
         }
     }
 
-    // Доступ к базе для наследников
     protected function getDB() {
         return $this->_db;
     }
 
-    // Добавление новости
     public function saveNews($title, $category, $description, $source) {
         try {
             $dt = time();
@@ -66,7 +69,6 @@ class NewsDB implements INewsDB {
         }
     }
 
-    // Получение всех новостей
     public function getNews() {
         try {
             $sql = "SELECT msgs.id as id, 
@@ -94,7 +96,6 @@ class NewsDB implements INewsDB {
         }
     }
 
-    // Удаление новости по id
     public function deleteNews($id) {
         try {
             $stmt = $this->_db->prepare("DELETE FROM msgs WHERE id = :id");
@@ -105,6 +106,23 @@ class NewsDB implements INewsDB {
             error_log('Exception: ' . $e->getMessage());
             return false;
         }
+    }
+
+    /**
+     * Метод заполняет массив items категориями из таблицы category
+     */
+    private function getCategories(): void {
+        $result = $this->_db->query("SELECT id, name FROM category");
+        while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+            $this->items[$row['id']] = $row['name'];
+        }
+    }
+
+    /**
+     * Возвращает итератор для массива items
+     */
+    public function getIterator(): Traversable {
+        return new ArrayIterator($this->items);
     }
 }
 ?>

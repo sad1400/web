@@ -12,7 +12,9 @@ class User {
         $this->name = $name;
         $this->login = $login;
         $this->password = $password;
-        self::$count++;
+        if (get_class($this) === User::class) {
+            self::$count++;
+        }
     }
 
     public function showInfo() {
