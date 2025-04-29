@@ -1,75 +1,92 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лабораторные работы по Проектированию архитектуры корпоративных информационных систем</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: #35424a;
-            color: #ffffff;
-            padding: 20px 0;
-            text-align: center;
-        }
-        h1 {
-            margin: 0;
-        }
-        .content {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            margin: 10px 0;
-        }
-        ul li a {
-            text-decoration: none;
-            color: #35424a;
-            font-weight: bold;
-        }
-        ul li a:hover {
-            color: #e8491d;
-        }
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background: #35424a;
-            color: #ffffff;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Лабораторные работы — Архитектура КИС</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #eef2f3, #ffffff);
+      color: #2ef0b5;
+    }
+
+    header {
+      background-color: #2ef0b5;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .lab-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .lab-list a {
+      display: block;
+      padding: 20px 25px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      background: white;
+      color: #2c3e50;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transition: all 0.25s ease-in-out;
+    }
+
+    .lab-list a:hover {
+      background-color: #e67e22;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background-color: #2ef0b5;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      margin-top: 60px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Лабораторные работы</h1>
-    </header>
-    <div class="content">
-        <ul>
-            <li><a href="lab1.php">Лабораторная работа №1</a></li>
-            <li><a href="lab2.php">Лабораторная работа №2</a></li>
-            <li><a href="lab3.php">Лабораторная работа №3</a></li>
-            <li><a href="lab4.php">Лабораторная работа №4</a></li>
-            <li><a href="lab5.php">Лабораторная работа №5</a></li>
-            <li><a href="lab6.php">Лабораторная работа №6</a></li>
-        </ul>
+  <header>
+    <h1>Лабораторные работы по проектированию архитектуры КИС</h1>
+  </header>
+
+  <div class="content">
+    <div class="lab-list">
+      <a href="lab1.php">Лабораторная работа №1 — Классы и интерфейсы</a>
+      <a href="lab2.php">Лабораторная работа №2 — Паттерны проектирования</a>
+      <a href="lab3.php">Лабораторная работа №3 — MVC</a>
+      <a href="lab4.php">Лабораторная работа №4 — ООП и SQLite</a>
+      <a href="lab5.php">Лабораторная работа №5 — ORM и миграции</a>
     </div>
-    <footer>
-        <p>&copy; 2025 Лабораторные работы по Проектированию архитектуры корпоративных информационных систем</p>
-    </footer>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Лабораторные работы по Проектированию архитектуры корпоративных информационных систем</p>
+  </footer>
 </body>
 </html>
