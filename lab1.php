@@ -12,7 +12,7 @@
             padding: 0;
         }
         header {
-            background: #35424a;
+            background: #2ef0b5;
             color: #ffffff;
             padding: 20px 0;
             text-align: center;
@@ -50,7 +50,7 @@
         footer {
             text-align: center;
             padding: 10px 0;
-            background: #35424a;
+            background: #2ef0b5;
             color: #ffffff;
             position: relative;
             bottom: 0;
@@ -76,3 +76,5 @@
     </footer>
 </body>
 </html>
+
+
